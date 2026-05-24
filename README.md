@@ -21,18 +21,19 @@
 ---
 
 ## 📁 Project Structure
-global-ai-layoffs/
+```global-ai-layoffs/
 ├── data/
-│ ├── layoffs_events.csv ← Raw Kaggle dataset
-│ └── global_ai_layoffs_cleaned.csv ← Cleaned & processed
+│ ├── layoffs_events.csv
+│ └── global_ai_layoffs_cleaned.csv
 ├── notebooks/
-│ ├── 01_data_cleaning.ipynb ← Data wrangling & preprocessing
-│ ├── 02_data_visualization.ipynb ← EDA & static charts
-│ ├── 03_dashboard.ipynb ← Interactive Dash dashboard v1
-│ └── 04_dashboard_v2.ipynb ← Interactive Dash dashboard v2
+│ ├── 01_data_cleaning.ipynb
+│ ├── 02_data_visualization.ipynb
+│ ├── 03_dashboard.ipynb
+│ └── 04_dashboard_v2.ipynb
 ├── assets/
 │ ├── dashboard_v1.png
 │ └── dashboard_v2.png
+├── .env.example
 ├── .gitignore
 ├── requirements.txt
 └── README.md
@@ -108,13 +109,21 @@ cd global-ai-layoffs
 pip install -r requirements.txt
 ```
 
-**3. Download the dataset via Kaggle API**
+**3. Set up your Kaggle API credentials**
 
-```bash
-kaggle datasets download -d belbino/global-ai-layoffs-and-job-market-2020-present --unzip -p data/
-```
+This project uses a `.env` file to keep credentials secure. Create a `.env` file in the project root:
 
-> The dataset will be saved as `layoffs_events.csv` inside the `data/` folder.
+KAGGLE_USERNAME=your_kaggle_username
+KAGGLE_KEY=your_kaggle_api_token
+
+> 🔑 Get your token from [Kaggle → Settings → API → Create New Token](https://www.kaggle.com/settings/account)
+> The `.env` file is listed in `.gitignore` — your credentials will **never** be pushed to GitHub.
+
+**4. Download the dataset**
+
+The dataset is fetched automatically when you run `01_data_cleaning.ipynb` via the Kaggle API. It will be saved as `layoffs_events.csv` inside the `data/` folder.
+
+> If you prefer to download manually, get it from [Kaggle](https://www.kaggle.com/datasets/belbino/global-ai-layoffs-and-job-market-2020-present) and place it in `data/` as `layoffs_events.csv`.
 
 **4. Run the notebooks in order**
 
