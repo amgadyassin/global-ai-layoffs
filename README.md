@@ -8,6 +8,7 @@ Exploratory data analysis and interactive dashboard on global AI industry layoff
 - `notebooks/01_data_cleaning.ipynb` — Data cleaning & preprocessing
 - `notebooks/02_data_visualization.ipynb` — Charts & EDA
 - `notebooks/03_dashboard.ipynb` — Interactive Dash + Plotly Express dashboard
+- `notebooks/04_dashboard_v2.ipynb` — Interactive Dash + Plotly Express dashboard v2
 
 ## Stack
 Python | Pandas | Plotly Express | Dash | Jupyter
