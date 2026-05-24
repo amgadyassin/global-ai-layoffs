@@ -23,7 +23,7 @@
 ## 📁 Project Structure
 global-ai-layoffs/
 ├── data/
-│ ├── global_ai_layoffs.csv ← Raw Kaggle dataset
+│ ├── layoffs_events.csv ← Raw Kaggle dataset
 │ └── global_ai_layoffs_cleaned.csv ← Cleaned & processed
 ├── notebooks/
 │ ├── 01_data_cleaning.ipynb ← Data wrangling & preprocessing
@@ -31,8 +31,8 @@ global-ai-layoffs/
 │ ├── 03_dashboard.ipynb ← Interactive Dash dashboard v1
 │ └── 04_dashboard_v2.ipynb ← Interactive Dash dashboard v2
 ├── assets/
-│ ├── dashboard_v1.png ← Dashboard v1 screenshot
-│ └── dashboard_v2.png ← Dashboard v2 screenshot
+│ ├── dashboard_v1.png
+│ └── dashboard_v2.png
 ├── .gitignore
 ├── requirements.txt
 └── README.md
@@ -96,25 +96,34 @@ global-ai-layoffs/
 ## 🚀 How to Run
 
 **1. Clone the repository**
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/global-ai-layoffs.git
+git clone https://github.com/amgadyassin/global-ai-layoffs.git
 cd global-ai-layoffs
 ```
 
 **2. Install dependencies**
+
 ```bash
 pip install -r requirements.txt
 ```
 
-**3. Download the dataset**
+**3. Download the dataset via Kaggle API**
 
-Get the dataset from [Kaggle](https://www.kaggle.com/datasets/belbino/global-ai-layoffs-and-job-market-2020-present) and place it in the `data/` folder as `global_ai_layoffs.csv`
+```bash
+kaggle datasets download -d belbino/global-ai-layoffs-and-job-market-2020-present --unzip -p data/
+```
+
+> The dataset will be saved as `layoffs_events.csv` inside the `data/` folder.
 
 **4. Run the notebooks in order**
-01_data_cleaning.ipynb → generates the cleaned CSV
-02_data_visualization.ipynb → static EDA charts
-03_dashboard.ipynb → dashboard at http://127.0.0.1:8050
-04_dashboard_v2.ipynb → dashboard at http://127.0.0.1:8051
+
+| Notebook | Output |
+|---|---|
+| `01_data_cleaning.ipynb` | Generates `global_ai_layoffs_cleaned.csv` |
+| `02_data_visualization.ipynb` | Static EDA charts |
+| `03_dashboard.ipynb` | Dashboard at http://127.0.0.1:8050 |
+| `04_dashboard_v2.ipynb` | Dashboard at http://127.0.0.1:8051 |
 
 ---
 
