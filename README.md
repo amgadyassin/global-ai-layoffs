@@ -113,8 +113,10 @@ pip install -r requirements.txt
 
 This project uses a `.env` file to keep credentials secure. Create a `.env` file in the project root:
 
+```
 KAGGLE_USERNAME=your_kaggle_username
 KAGGLE_KEY=your_kaggle_api_token
+```
 
 > 🔑 Get your token from [Kaggle → Settings → API → Create New Token](https://www.kaggle.com/settings/account)
 > The `.env` file is listed in `.gitignore` — your credentials will **never** be pushed to GitHub.
